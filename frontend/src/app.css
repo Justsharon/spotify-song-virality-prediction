@@ -1,0 +1,79 @@
+@import 'tailwindcss';
+
+@theme {
+	--color-ink: #050609;
+	--color-panel: #0b0d12;
+	--color-panel-2: #10131a;
+	--color-line: #1b202b;
+	--color-muted: #8b93a3;
+
+	--color-matte-50: #edf2f7;
+	--color-matte-100: #d5e0eb;
+	--color-matte-200: #adc0d3;
+	--color-matte-300: #849db7;
+	--color-matte-400: #6483a0;
+	--color-matte-500: #4c6d8d;
+	--color-matte-600: #3c5773;
+	--color-matte-700: #30455b;
+	--color-matte-800: #243445;
+	--color-matte-900: #18232f;
+}
+
+html {
+	color-scheme: dark;
+}
+
+body {
+	@apply bg-ink text-matte-100 antialiased;
+	background-image:
+		radial-gradient(ellipse 80% 50% at 50% -20%, rgb(76 109 141 / 0.22), transparent),
+		radial-gradient(ellipse 60% 40% at 100% 100%, rgb(48 69 91 / 0.12), transparent);
+	background-attachment: fixed;
+}
+
+input[type='range'] {
+	@apply h-1.5 w-full cursor-pointer appearance-none rounded-full bg-line;
+}
+
+input[type='range']::-webkit-slider-thumb {
+	@apply appearance-none rounded-full border-2 border-matte-300 bg-matte-500;
+	height: 16px;
+	width: 16px;
+	transition:
+		transform 0.15s ease,
+		box-shadow 0.15s ease;
+}
+
+input[type='range']::-webkit-slider-thumb:hover {
+	@apply border-matte-100 bg-matte-400;
+	transform: scale(1.15);
+	box-shadow: 0 0 0 4px rgb(76 109 141 / 0.25);
+}
+
+input[type='range']::-moz-range-thumb {
+	@apply rounded-full border-2 border-matte-300 bg-matte-500;
+	height: 14px;
+	width: 14px;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type='number'] {
+	-moz-appearance: textfield;
+}
+
+select {
+	background-image: linear-gradient(45deg, transparent 50%, #6483a0 50%),
+		linear-gradient(135deg, #6483a0 50%, transparent 50%);
+	background-position:
+		calc(100% - 16px) calc(50% - 2px),
+		calc(100% - 11px) calc(50% - 2px);
+	background-repeat: no-repeat;
+	background-size:
+		5px 5px,
+		5px 5px;
+}

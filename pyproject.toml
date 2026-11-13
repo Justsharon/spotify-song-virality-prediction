@@ -1,0 +1,22 @@
+[project]
+name = "spotify-song-virality"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.143.3",
+    "kagglehub>=1.0.2",
+    "matplotlib>=3.10.9",
+    "numpy>=2.2.6",
+    "pandas>=2.3.3",
+    "requests>=2.34.2",
+    "scikit-learn>=1.7.2",
+    "seaborn>=0.13.2",
+    "uvicorn[standard]>=0.54.0",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.3.0",
+]
